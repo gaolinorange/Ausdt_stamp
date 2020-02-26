@@ -9,6 +9,8 @@ virtualenv --no-site-packages -p python3 ~/venv
 source ~/venv/bin/activate
 
 # download pymesh
+mkdir data
+mkdir package
 wget https://github.com/PyMesh/PyMesh/releases/download/v0.2.1/pymesh2-0.2.1-cp36-cp36m-linux_x86_64.whl
 mv pymesh2-0.2.1-cp36-cp36m-linux_x86_64.whl ./package/pymesh2-0.2.1-cp36-cp36m-linux_x86_64.whl
 
