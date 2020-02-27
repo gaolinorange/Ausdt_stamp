@@ -2,9 +2,11 @@
 Lin Gao, Jie Yang, Yi-Ling Qiao, Yu-Kun Lai, Paul L. Rosin, Weiwei Xu and Shihong Xia
 
 Code for "Automatic Unpaired Shape Deformation Transfer", Siggraph Asia 2018
+<!--
 <p align='center'>  
   <img src='imgs/teaser.jpg' width='800'/>
 </p>
+-->
 
 ## Goal
 
@@ -70,7 +72,7 @@ The required condition is listed.
 
 ## Access to Data and Checkpoint
 
-We have preprocess the raw data (mesh format) to format that can be fed into our network. The raw data have beed turned into a ```*.mat``` files, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can place the file in the ```data``` dir of our repository. And for the checkpoint to reproduce the results, you can dowload it form [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can run the following command to get the data and checkpoint.
+All the test data and checkpoint have been uploaded to the Dropbox. So you must have a link with Dropbox to dowload them. We have preprocess the raw data (mesh format) to format that can be fed into our network. The raw data have beed turned into a ```*.mat``` files, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can place the file in the ```data``` dir of our repository. And for the checkpoint to reproduce the results, you can dowload it form [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can run the following command to get the data and checkpoint.
 	
 	bash dowload_data.sh
 
@@ -92,7 +94,10 @@ If you finish the above steps.The directory tree looks like this:
 	``` 
 
 ## Usage
-This section is focused on and illustrates how to run the provided code and reproduce the representative result step by step.
+This section is focused on and illustrates how to run the provided code and reproduce the representative result step by step. First， you must activate the virtual environment by the following command.
+
+	source ~/venv_vcgan/bin/activate
+
 + If you need to run the code and train the whole network, please type the follow commands.
 
 		python code/train.py --A finger --B pants

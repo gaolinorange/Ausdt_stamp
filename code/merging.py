@@ -1205,6 +1205,7 @@ class convMESH():
             if not _success:
                 raise Exception("raise a problem")
             path = self.checkpoint_dir + '/../test_gan' + str(step)
+            sub_id = [29,35,52]
             if not os.path.isdir(path):
                 os.makedirs(path)
 
@@ -1224,17 +1225,17 @@ class convMESH():
             b_gen_a1 = recover_data(b_gen_a, self.logrmin_a, self.logrmax_a, self.smin_a, self.smax_a, self.logr_avg_a,
                                     self.s_avg_a, datainfo.resultmin, datainfo.resultmax, useS=datainfo.useS)
 
-            self.f2v_a.get_vertex(IA, path + '/AtoB/A', one=True)
-            sio.savemat(path + '/AtoB/A.mat', {'feature': IA})
+            self.f2v_a.get_vertex(IA[sub_id], path + '/AtoB/A', one=True)
+            sio.savemat(path + '/AtoB/A.mat', {'feature': IA[sub_id]})
 
-            self.f2v_b.get_vertex(a_gen_b1, path + '/AtoB/B', one=True)
-            sio.savemat(path + '/AtoB/B.mat', {'feature': a_gen_b1})
+            self.f2v_b.get_vertex(a_gen_b1[sub_id], path + '/AtoB/B', one=True)
+            sio.savemat(path + '/AtoB/B.mat', {'feature': a_gen_b1[sub_id]})
 
-            self.f2v_b.get_vertex(IB, path + '/BtoA/B', one=True)
-            sio.savemat(path + '/BtoA/B.mat', {'feature': IB})
+            self.f2v_b.get_vertex(IB[sub_id], path + '/BtoA/B', one=True)
+            sio.savemat(path + '/BtoA/B.mat', {'feature': IB[sub_id]})
 
-            self.f2v_a.get_vertex(b_gen_a1, path + '/BtoA/A', one=True)
-            sio.savemat(path + '/BtoA/A.mat', {'feature': b_gen_a1})
+            self.f2v_a.get_vertex(b_gen_a1[sub_id], path + '/BtoA/A', one=True)
+            sio.savemat(path + '/BtoA/A.mat', {'feature': b_gen_a1[sub_id]})
 
     def test_metric(self, datainfo, step=0):
         with tf.Session(config=self.config) as sess:

@@ -1,9 +1,9 @@
 
 # Create a virtual environment 
-virtualenv --no-site-packages -p python3 ~/venv
+virtualenv --no-site-packages -p python3 ~/venv_vcgan
 
 # Activate the virtual environment
-source ~/venv/bin/activate
+source ~/venv_vcgan/bin/activate
 
 # Update pip
 pip install -U pip

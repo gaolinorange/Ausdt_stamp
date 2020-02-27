@@ -1,0 +1,5 @@
+title={Automatic Unpaired Shape Deformation Transfer}
+
+author={Gao Lin, Yang Jie, Qiao Yi-Ling, Lai Yukun, Rosin, Paul, Xu Weiwei and Xia Shihong}
+
+os={Linux}

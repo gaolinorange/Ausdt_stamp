@@ -47,5 +47,5 @@ datainfo = Config(args, False)
 model = modelvae.convMESH(datainfo)
 
 with tf.device('/cpu:0'):
-    model.test_vae(datainfo)
+    # model.test_vae(datainfo)
     model.test_gan(datainfo)
