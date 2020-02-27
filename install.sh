@@ -1,12 +1,12 @@
 
-# Update pip
-pip install -U pip
-
 # Create a virtual environment 
 virtualenv --no-site-packages -p python3 ~/venv
 
 # Activate the virtual environment
 source ~/venv/bin/activate
+
+# Update pip
+pip install -U pip
 
 # download pymesh
 mkdir package
@@ -26,10 +26,3 @@ pip install numpy==1.16.0
 
 echo "installing sucessfully"
 
-# download data
-echo "dowload data and checkpoint"
-curl -L -o elephhorse.mat https://www.dropbox.com/sh/xmgod9intwrjzrl/elephhorse.mat?dl=1
-mv elephhorse.mat ./data/elephhorse.mat
-curl -L -o checkpoint.zip https://www.dropbox.com/sh/6uk2mxfa9c9z5is/checkpoint.zip?dl=1
-mv checkpoint.zip ./ckpt/checkpoint.zip
-unzip ./ckpt/checkpoint.zip -d ./ckpt

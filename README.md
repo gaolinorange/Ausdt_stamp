@@ -72,9 +72,10 @@ The required condition is listed.
 
 We have preprocess the raw data (mesh format) to format that can be fed into our network. The raw data have beed turned into a ```*.mat``` files, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can place the file in the ```data``` dir of our repository. And for the checkpoint to reproduce the results, you can dowload it form [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can run the following command to get the data and checkpoint.
 	
-		bash dowload_data.sh
+	bash dowload_data.sh
 
 If you finish the above steps.The directory tree looks like this:
+
 	```
 	ckpt
 	├── checkpoint
