@@ -57,6 +57,7 @@ The required condition is listed.
 		
 + Secondly, if you complete the first step, you can install the virtual environment and the necessary library by typing the follow commands.
 	**Note: Specially, the package ```pymesh``` must be downloaded from [here](https://github.com/PyMesh/PyMesh/releases/download/v0.2.1/pymesh2-0.2.1-cp36-cp36m-linux_x86_64.whl), but we have included it in following script.**
+	
 		bash install.sh
 
 + Finally, after installing the necessary library, you need to ensure that the version of numpy is 1.16.0. 
@@ -67,18 +68,13 @@ The required condition is listed.
 	
 		pip install numpy==1.16.0
 
-## Access to Data
+## Access to Data and Checkpoint
 
-We have preprocess the raw data (mesh format) to format that can be fed into our network. The raw data have beed turned into a ```*.mat``` files, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can place the file in the ```data``` dir of our repository.
+We have preprocess the raw data (mesh format) to format that can be fed into our network. The raw data have beed turned into a ```*.mat``` files, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can place the file in the ```data``` dir of our repository. And for the checkpoint to reproduce the results, you can dowload it form [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can run the following command to get the data and checkpoint.
+	
+		bash dowload_data.sh
 
-## Usage
-This section is focused on and illustrates how to run the provided code and reproduce the representative result step by step.
-+ If you need to run the code and train the whole network, please type the follow commands.
-
-		CUDA_VISIBLE_DEVICES=0 python code/train.py --A finger --B pants
-
-+ If you only need to reproduce the representative result, please type the follow commands. The checkpoint files should download from the [here](https://drive.google.com/drive/folders/156bwWpELpDpWIlc0OKc2asDiZTSqdm7A?usp=sharing) and be moved them(4 files) into path (ckpt/ckeckpoint).
-	The directory tree looks like this:
+If you finish the above steps.The directory tree looks like this:
 	```
 	ckpt
 	├── checkpoint
@@ -88,9 +84,19 @@ This section is focused on and illustrates how to run the provided code and repr
 	│   └── *.index
 	├── *.ini
 	├ code
+	├ package
+	├── pymesh*.whl
 	├ data
 	└──*.mat # preprocess data
 	``` 
+
+## Usage
+This section is focused on and illustrates how to run the provided code and reproduce the representative result step by step.
++ If you need to run the code and train the whole network, please type the follow commands.
+
+		python code/train.py --A finger --B pants
+
++ If you only need to reproduce the representative result, please type the follow commands.
 
 		python code/test.py --output_dir ./ckpt
 
@@ -103,7 +109,7 @@ This section is focused on and illustrates how to run the provided code and repr
 The section is focused on showing some our results of the experiment. The results is the figure 23 in the paper. The first row is source shape, and the second row is target shapes.
 
 <p align='center'>  
-  <img src='imgs/figure23.jpg' width='600'/>
+  <img src='imgs/figure23.png' width='600'/>
 </p>
 
 ## Citation
