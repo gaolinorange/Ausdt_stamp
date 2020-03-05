@@ -40,7 +40,7 @@ ininame = getFileName(args.output_dir, '.ini')
 
 args = inifile2args(args, os.path.join(args.output_dir, ininame[0]))
 
-[print('{}: {}'.format(x,k)) for x,k in vars(args).items()]
+#[print('{}: {}'.format(x,k)) for x,k in vars(args).items()]
 
 datainfo = Config(args, False)
 

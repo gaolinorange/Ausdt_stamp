@@ -26,7 +26,7 @@ class Config():
 
         self.hidden_dim = int(args.hidden_dim)
 
-        self.featurefile = args.A + args.B + '.mat'
+        self.featurefile = os.path.join('data' + args.A + args.B + '.mat')
         self.featurefile_a = args.A + '.mat'
         self.featurefile_b = args.B + '.mat'
         self.lightfeildmat = args.A + args.B + 'lfd.mat'
@@ -87,7 +87,7 @@ class Config():
         else:
             self.flog = open(os.path.join(self.output_dir, 'log.txt'), 'w')
 
-        self.iddat_name = 'id.dat'
+        self.iddat_name = os.path.join('data', 'id.dat')
         self.train_id_a, self.valid_id_a, self.train_id_b, self.valid_id_b = spilt_dataset(len(self.meshdata_a.feature),
                                                                                            len(self.meshdata_b.feature),
                                                                                            self.vae_ablity,

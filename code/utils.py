@@ -86,7 +86,7 @@ class Datamesh:
 
         refmesh_V = np.transpose(data['ref_V']).astype('float32')
         refmesh_F = np.transpose(data['ref_F']).astype('int32') - 1
-        self.refmesh_path = dataname + '.obj'
+        self.refmesh_path = os.path.join('data', dataname + '.obj')
         self.mesh = pymesh.form_mesh(refmesh_V, refmesh_F)
         pymesh.save_mesh(self.refmesh_path, self.mesh, ascii=True)
         return

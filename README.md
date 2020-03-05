@@ -72,26 +72,31 @@ The required condition is listed.
 
 ## Access to Data and Checkpoint
 
-All the test data and checkpoint have been uploaded to the Dropbox. So you must have a link with Dropbox to dowload them. We have preprocess the raw data (mesh format) to format that can be fed into our network. The raw data have beed turned into a ```*.mat``` files, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can place the file in the ```data``` dir of our repository. And for the checkpoint to reproduce the results, you can dowload it form [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can run the following command to get the data and checkpoint.
+All the test data and checkpoint have been uploaded to the Dropbox. So you must have a link with Dropbox to download them. We have preprocess the raw data (mesh format) to format that can be fed into our network. The raw data have beed turned into a ```*.mat``` files, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can place the file in the ```data``` dir of our repository. And for the checkpoint to reproduce the results, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can run the following command to get the data and checkpoint.
 	
-	bash dowload_data.sh
+	bash download_data.sh
 
 If you finish the above steps.The directory tree looks like this:
 
-	```
-	ckpt
-	├── checkpoint
-	│   ├── checkpoint
-	│   ├── *.data-00000-of-00001
-	│   ├── *.meta
-	│   └── *.index
-	├── *.ini
-	├ code
-	├ package
-	├── pymesh*.whl
-	├ data
-	└──*.mat # preprocess data
-	``` 
+
+	Ausdt_stamp
+	├── ckpt  # checkpoint dir
+	│   ├── checkpoint
+	│   │   ├── checkpoint
+	│   │   ├── *.data-00000-of-00001
+	│   │   ├── *.index
+	│   │   └── *.meta
+	│   └── *.ini
+	├── code
+	├── data
+	│   └── *.mat # preprocess data
+	├── imgs
+	├── package
+	│   └── pymesh*.whl
+	├── download_data.sh
+	├── install.sh
+	└── README.md
+
 
 ## Usage
 This section is focused on and illustrates how to run the provided code and reproduce the representative result step by step. First， you must activate the virtual environment by the following command.
@@ -100,9 +105,9 @@ This section is focused on and illustrates how to run the provided code and repr
 
 + If you need to run the code and train the whole network, please type the follow commands.
 
-		python code/train.py --A finger --B pants
+		python code/train.py --A eleph --B horse --output_dir ./ckpt
 
-+ If you only need to reproduce the representative result, please type the follow commands.
++ If you only need to reproduce the representative result (figure 23 in paper), please type the follow commands.
 
 		python code/test.py --output_dir ./ckpt
 
