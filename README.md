@@ -72,7 +72,7 @@ The dependence of operation system is listed.
 
 ## Access to Data and Checkpoint
 
-All the test data and checkpoint have been uploaded to the Dropbox. So you must have a link with Dropbox to download them. We have preprocess the raw data (mesh format) to format that can be fed into our network. The raw data have been turned into a ```*.mat``` files, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can place the file in the ```data``` dir of our repository. And for the checkpoint to reproduce the results, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can run the following command to get the data and checkpoint.
+All the test data and checkpoint have been uploaded to the Dropbox. So you must have a link with Dropbox to download them. We have preprocess the raw data (mesh format) to format that can be fed into our network. The raw data have been turned into a ```*.mat``` file, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can place the file in the ```data``` dir of our repository. And for the checkpoint to reproduce the results, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can run the following command to get the data and checkpoint.
 	
 	bash download_data.sh
 
