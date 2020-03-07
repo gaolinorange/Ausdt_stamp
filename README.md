@@ -72,7 +72,7 @@ The dependence of operation system is listed.
 
 ## Access to Data and Checkpoint
 
-All the test data and checkpoint have been uploaded to the Dropbox. So you must have a link with Dropbox to download them. We have preprocess the raw data (mesh format) to format that can be fed into our network. The raw data have beed turned into a ```*.mat``` files, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can place the file in the ```data``` dir of our repository. And for the checkpoint to reproduce the results, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can run the following command to get the data and checkpoint.
+All the test data and checkpoint have been uploaded to the Dropbox. So you must have a link with Dropbox to download them. We have preprocess the raw data (mesh format) to format that can be fed into our network. The raw data have been turned into a ```*.mat``` files, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can place the file in the ```data``` dir of our repository. And for the checkpoint to reproduce the results, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can run the following command to get the data and checkpoint.
 	
 	bash download_data.sh
 
@@ -99,7 +99,7 @@ If you finish the above steps.The directory tree looks like this:
 
 
 ## Usage
-This section is focused on and illustrates how to run the provided code and reproduce the representative result step by step. First， you must activate the virtual environment by the following command.
+This section illustrates how to run the provided code and reproduce the representative result step by step. First, you must activate the virtual environment by the following command.
 
 	source ~/venv_vcgan/bin/activate
 
@@ -107,17 +107,17 @@ This section is focused on and illustrates how to run the provided code and repr
 
 		python code/train.py --A eleph --B horse --output_dir ./ckpt
 
-+ If you only need to reproduce the representative result (figure 23 in paper), please type the follow commands.
++ If you only need to reproduce the representative result (figure 23 of the paper), please type the follow commands.
 
 		python code/test.py --output_dir ./ckpt
 
-+ After running the code, you can obtain the results and the results are located in the follow directory.
++ After running the code, you can obtain the results in the follow directory. The generated shape files are all in ```*.obj``` format, which stores the vertice coordinate and face indices.
 
 		cd ~/ckpt/test_gan0/AtoB/B
 	**Note: The directory ```ckpt/test_gan0/AtoB/A``` is the input shapes, and ```ckpt/test_gan0/AtoB/B``` is the transferred results by our methods.**
 
 ## Results
-The section is focused on showing some our results of the experiment. The results is the figure 23 in the paper. The first row is source shape, and the second row is target shapes.
+The section focuses on showing some our results of the experiment. The results are in the figure 23 of the paper. The shapes in the first row are input shapes, and the shapes in the second row are transferred shapes.
 
 <p align='center'>  
   <img src='imgs/figure23.png' width='600'/>
