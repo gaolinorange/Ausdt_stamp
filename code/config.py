@@ -26,7 +26,7 @@ class Config():
 
         self.hidden_dim = int(args.hidden_dim)
 
-        self.featurefile = os.path.join('data' + args.A + args.B + '.mat')
+        self.featurefile = os.path.join('data', args.A + args.B + '.mat')
         self.featurefile_a = args.A + '.mat'
         self.featurefile_b = args.B + '.mat'
         self.lightfeildmat = args.A + args.B + 'lfd.mat'
