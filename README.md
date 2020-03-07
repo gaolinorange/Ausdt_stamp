@@ -66,7 +66,7 @@ The dependence of operation system is listed.
 
 		python -c "import numpy;print(numpy.__version__)"
 
-	If not, you can make it by typing the follow commands.
+	If not, you can correct it by typing the follow commands.
 	
 		pip install numpy==1.16.0
 
