@@ -107,7 +107,7 @@ This section illustrates how to run the provided code and reproduce the represen
 
 		python code/train.py --A eleph --B horse --output_dir ./ckpt
 
-+ If you only need to reproduce the representative result (figure 23 of the paper), please type the following commands.
++ If you only need to reproduce the representative result (figure 21 of the paper), please type the following commands.
 
 		python code/test.py --output_dir ./ckpt
 
