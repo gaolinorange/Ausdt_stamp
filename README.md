@@ -10,17 +10,17 @@ Code for "Automatic Unpaired Shape Deformation Transfer", Siggraph Asia 2018
 
 ## Goal
 
-Propose an unsupervised (no need for the shape correspondance between the source shape and target shape) method to transfer the shape deformation between different 3D models.
+Propose an unsupervised (no need for the shape correspondence between the source shape and target shape) method to transfer the shape deformation between different 3D models.
 
 ## Abstract
 
 Transferring deformation from a source shape to a target shape is a very useful technique in computer graphics. State-of-the-art deformation transfer methods require either point-wise correspondences between source and target shapes, or pairs of deformed source shapes with corresponding deformations.  
 
-In this work, we propose a novel approach to automatic deformation tranfer between two unpaired shape sets without any correspondences.
+In this work, we propose a novel approach to automatic deformation transfer between two unpaired shape sets without any correspondences.
 
 ## Description
 
-Given two sets of unpaired shapes, a source shape set S and a target shape set T, as well as a deformed source shape s, our aim is to produce a deformed target shape t which has visually similar deformation as s. Shapes in the same set S or T have the same connectivity. Many shape datasets satisfy this: they are either obtained by deforming a mesh model, or fitting a template mesh model to deformed shapes. We do not assume shapes in S correspond to specific shapes in T, although we assume that S and T provide sufficient coverage of typical deformations of the relevant shapes. We learn a deep model with S and T as training examples. Once the deep model is trained, a shape t is generated for each input s.  
+Given two sets of unpaired shapes, a source shape set S and a target shape set T, as well as a deformed source shape s, our aim is to produce a deformed target shape t which has visually similar deformation as s. Shapes in the same set S or T have the same connectivity. Many shape datasets satisfy this: they are either obtained by deforming a mesh model or fitting a template mesh model to deformed shapes. We do not assume shapes in S correspond to specific shapes in T, although we assume that S and T provide sufficient coverage of typical deformations of the relevant shapes. We learn a deep model with S and T as training examples. Once the deep model is trained, a shape t is generated for each input s.  
 
 Experimental results show that our fully automatic method is able to obtain high-quality deformation transfer results with unpaired data sets, comparable or better than existing methods where strict correspondences are required.
 
@@ -35,17 +35,17 @@ The dependence of operation system is listed.
 ## Preparetion
 
 ### Downloads
-+ You need to download our code and data, please type the follow commands.
++ You need to download our code and data, please type the following commands.
 
 		git clone https://github.com/gaolinorange/Ausdt_stamp.git
 
 ### Install
 
-**Note: our code and the follow commands need to be run in a virtual environment.**
+**Note: our code and the following commands need to be run in a virtual environment.**
 
 + Firstly, you need a virtual environment, please check if your python environment is already configured.
 
-	**Note: pip >= 19.0 and virtualenv >= 15.1.0**
+	**Note: pip >= 19.0 and virtualenv == 15.1.0**
 	
 		python3 --version
 		pip3 --version
@@ -55,10 +55,10 @@ The dependence of operation system is listed.
 	
 		sudo apt update
 		sudo apt install python3-dev python3-pip
-		sudo pip3 install -U virtualenv
+		sudo pip3 install virtualenv==15.1.0
 		
-+ Secondly, if you complete the first step, you can install the virtual environment and the necessary library by typing the follow commands.
-	**Note: Specially, the package ```pymesh``` must be downloaded from [here](https://github.com/PyMesh/PyMesh/releases/download/v0.2.1/pymesh2-0.2.1-cp36-cp36m-linux_x86_64.whl), but we have included it in following script.**
++ Secondly, if you complete the first step, you can install the virtual environment and the necessary library by typing the following commands.
+	**Note: Especially, the package ```pymesh``` must be downloaded from [here](https://github.com/PyMesh/PyMesh/releases/download/v0.2.1/pymesh2-0.2.1-cp36-cp36m-linux_x86_64.whl), but we have included it in following script.**
 	
 		bash install.sh
 
@@ -66,13 +66,13 @@ The dependence of operation system is listed.
 
 		python -c "import numpy;print(numpy.__version__)"
 
-	If not, you can correct it by typing the follow commands.
+	If not, you can correct it by typing the following commands.
 	
 		pip install numpy==1.16.0
 
 ## Access to Data and Checkpoint
 
-All the test data and checkpoint have been uploaded to the Dropbox. So you must have a link with Dropbox to download them. We have preprocess the raw data (mesh format) to format that can be fed into our network. The raw data have been turned into a ```*.mat``` file, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can place the file in the ```data``` dir of our repository. And for the checkpoint to reproduce the results, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can run the following command to get the data and checkpoint.
+All the test data and checkpoints have been uploaded to the Dropbox. So you must have a link with Dropbox to download them. We have preprocessed the raw data (mesh format) to format that can be fed into our network. The raw data have been turned into a ```*.mat``` file, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can place the file in the ```data``` dir of our repository. And for the checkpoint to reproduce the results, you can download it from [here](https://drive.google.com/file/d/1uoxTuHANhnGRNd9aCULCE8W9WAz0sg4O/view?usp=sharing). You can run the following command to get the data and checkpoint.
 	
 	bash download_data.sh
 
@@ -103,21 +103,21 @@ This section illustrates how to run the provided code and reproduce the represen
 
 	source ~/venv_vcgan/bin/activate
 
-+ If you need to run the code and train the whole network, please type the follow commands.
++ If you need to run the code and train the whole network, please type the following commands.
 
 		python code/train.py --A eleph --B horse --output_dir ./ckpt
 
-+ If you only need to reproduce the representative result (figure 23 of the paper), please type the follow commands.
++ If you only need to reproduce the representative result (figure 23 of the paper), please type the following commands.
 
 		python code/test.py --output_dir ./ckpt
 
-+ After running the code, you can obtain the results in the follow directory. The generated shape files are all in ```*.obj``` format, which stores the vertice coordinate and face indices.
++ After running the code, you can obtain the results in the following directory. The generated shapefiles are all in ```*.obj``` format, which stores the vertice coordinate and face indices.
 
-		cd ~/ckpt/test_gan0/AtoB/B
+		cd ./ckpt/test_gan0/AtoB/B
 	**Note: The directory ```ckpt/test_gan0/AtoB/A``` is the input shapes, and ```ckpt/test_gan0/AtoB/B``` is the transferred results by our methods.**
 
 ## Results
-The section focuses on showing some our results of the experiment. The results are in the figure 23 of the paper. The shapes in the first row are input shapes, and the shapes in the second row are transferred shapes.
+The section focuses on showing some our results of the experiment. The results are in figure 21 of the paper. The shapes in the first row are input shapes, and the shapes in the second row are transferred shapes.
 
 <p align='center'>  
   <img src='imgs/figure23.png' width='600'/>
